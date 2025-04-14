@@ -10,9 +10,9 @@ import re
 
 def get_docker_image_and_ext(language):
     if language == "python":
-        return "dgbhanderi/python-executor", ".py"
+        return "python-executor", ".py"
     elif language == "r":
-        return "dgbhanderi/r-executor", ".R"
+        return "r-executor", ".R"
     else:
         raise ValueError("Unsupported language")
 
