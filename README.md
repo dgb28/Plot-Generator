@@ -38,6 +38,17 @@ This is the backend interface for **Plot generator**, a platform that lets users
 https://youtu.be/mEBfLgDtqrs
 
 ---
+## 🐞 Issues Encountered & Resolutions
+
+- **Issue:** Backend containers couldn’t access required Python or R libraries  
+  **Resolution:** Created custom Docker images with all required libraries pre-installed and pushed to Docker Hub.
+
+- **Issue:** Cross-Origin Resource Sharing (CORS) errors between frontend and backend  
+  **Resolution:** Configured CORS headers in Django to allow frontend access.
+
+- **Issue:** HTML plot rendering wasn’t loading in frontend  
+  **Resolution:** Used Django's `media` folder to serve `.html` files and rendered them using `<iframe>` in the frontend.
+---
 
 ## 🛠️ How to Run the Entire App Locally
 
