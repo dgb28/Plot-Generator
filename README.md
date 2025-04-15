@@ -1,4 +1,4 @@
-# 🚀 CodePlotter  
+# 🚀 Plot generator  
 🎨 Write Python or R code and generate beautiful visualizations in real-time. Built with React, Django, and Docker.
 
 ## 🌟 Overview  
