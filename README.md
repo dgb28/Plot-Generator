@@ -26,20 +26,6 @@
 
 ---
 
-## 📂 Project Structure
-
-```
-CodePlotter/
-├── frontend/        # React + Vite UI
-├── backend/         # Django REST API
-│   └── media/       # Stores HTML plots
-│   └── code_executors/
-│       ├── python/  # Dockerfile + snippet.py
-│       └── r/       # Dockerfile + snippet.R
-```
-
----
-
 ## 🛠️ How to Run the Entire App Locally
 
 ### 1️⃣ Clone the Repository
