@@ -11,8 +11,6 @@
 - 🖼️ Outputs include standard output, error logs, base64-encoded images, and Plotly HTML  
 - 🌐 Built with React (Vite) frontend + Django REST backend
 
----
-
 ## 🧩 Tech Stack  
 ### Frontend
 - React + Vite  
