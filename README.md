@@ -99,7 +99,96 @@ def get_docker_image_and_ext(language):
 # Start Django server
 python manage.py runserver  # Runs at http://127.0.0.1:8000
 ```
+## 🧪 Sample Code Snippets
+🐍 Python Scripts
+1. Static Plot with Matplotlib + Seaborn + Scikit-learn + Pandas
+```python
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
 
+iris = load_iris(as_frame=True)
+df = iris.frame
+df['target'] = iris.target
+
+sns.pairplot(df, hue='target', palette='Set1')
+plt.suptitle("Static Pairplot of Iris Dataset", y=1.02)
+plt.tight_layout()
+plt.savefig("static_plot.png")
+plt.show()
+
+```
+2. Interactive Plot with Plotly + Pandas + Scikit-learn
+```python
+import pandas as pd
+import plotly.express as px
+from sklearn.datasets import load_wine
+
+df = load_wine(as_frame=True).frame
+df['target'] = load_wine().target
+
+fig = px.scatter(
+    df,
+    x='alcohol',
+    y='malic_acid',
+    color='target',
+    hover_data=['ash', 'alcalinity_of_ash'],
+    title="Interactive Scatter Plot of Wine Dataset"
+)
+
+fig.write_html("interactive_plot.html")
+fig.show()
+
+```
+3. 3D Interactive Plot with Plotly
+```python
+import pandas as pd
+import plotly.express as px
+from sklearn.datasets import load_breast_cancer
+
+df = load_breast_cancer(as_frame=True).frame
+df['target'] = load_breast_cancer().target
+
+fig = px.scatter_3d(
+    df,
+    x='mean radius',
+    y='mean texture',
+    z='mean perimeter',
+    color='target',
+    title="3D Interactive Plot - Breast Cancer Dataset"
+)
+
+fig.write_html("3d_interactive_plot.html")
+fig.show()
+
+```
+📊 R Scripts
+1. 3D Interactive Plot with rgl + htmlwidgets
+```R
+library(rgl)
+library(htmlwidgets)
+
+x <- rnorm(100)
+y <- rnorm(100)
+z <- rnorm(100)
+
+open3d(useNULL = TRUE)
+plot3d(x, y, z, col = rainbow(100), size = 5)
+
+htmlwidgets::saveWidget(rglwidget(), "rgl_plot.html", selfcontained = TRUE)
+```
+2. Lattice Plot
+```R
+library(lattice)
+
+data(mtcars)
+
+png("lattice_plot.png")
+splom(~mtcars[1:4], data = mtcars, main = "MTCARS Scatterplot Matrix")
+dev.off()
+
+```
 ---
 
 ## 👥 Collaborators  
