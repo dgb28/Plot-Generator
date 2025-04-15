@@ -24,7 +24,7 @@ This is the backend interface for **Plot generator**, a platform that lets users
 - TailwindCSS  
 - Ace Editor  
 - REST integration with backend
-- 👉 [CodePlotter Frontend (Django)](https://github.com/dgb28/Plot-Generator-ui)
+- 👉 [Code Generator Frontend (Django)](https://github.com/dgb28/Plot-Generator-ui)
 
 ### Backend
 - Django + Django REST Framework  
