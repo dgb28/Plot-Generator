@@ -1,15 +1,22 @@
-# 🚀 Plot Generator  
-🎨 Write Python or R code and generate beautiful visualizations in real-time. Built with React, Django, and Docker.
+# 🚀 Plot Generator Backend
+🎨 Write Python or R code and generate beautiful visualizations in real-time. Built with React + Vite, Django, and Docker.
 
 ## 🌟 Overview  
-**Plot Generator** is a full-stack application that lets users write Python or R code, execute it securely in Docker containers, and visualize the output instantly — including console output, images, and interactive Plotly HTML charts.
+This is the backend interface for **Plot generator**, a platform that lets users write Python or R code to generate beautiful visualizations — all executed in secure Docker containers on the backend. Users can write code, run it, and view visual or HTML outputs right in the browser.
 
 ## 🧠 Key Features  
-- 📝 Interactive code editor with Ace Editor  
+- 📝 Interactive code editor with syntax highlighting (Ace Editor)  
 - 🐳 Secure backend code execution using custom Docker containers  
-- 📦 Python & R support with `matplotlib`, `numpy`, `pandas`, `seaborn`, `scikit-learn`, `plotly`, `lattice`, `rgl`, `fs`, `htmlwidgets`  
-- 🖼️ Outputs include standard output, error logs, base64-encoded images, and Plotly HTML  
-- 🌐 Built with React (Vite) frontend + Django REST backend
+- 📦 Supports Python & R with popular libraries:  
+  `matplotlib`, `numpy`, `pandas`, `seaborn`, `scikit-learn`, `plotly`, `lattice`, `rgl`, `fs`, `htmlwidgets`  
+- 🖼️ Outputs include:  
+  - Standard output & error logs  
+  - Base64-encoded images  
+  - Interactive Plotly charts rendered via `<iframe>`  
+- 🔌 Seamless backend integration using REST API  
+- 🌗 Dark theme UI with TailwindCSS  
+- 🚀 Built with React (Vite) + Django REST Framework  
+- ⚡ Optimized for speed and lightweight performance with Vite
 
 ## 🧩 Tech Stack  
 ### Frontend
@@ -17,6 +24,7 @@
 - TailwindCSS  
 - Ace Editor  
 - REST integration with backend
+👉 [CodePlotter Frontend (Django)](https://github.com/dgb28/Plot-Generator-ui)
 
 ### Backend
 - Django + Django REST Framework  
@@ -88,33 +96,8 @@ def get_docker_image_and_ext(language):
         return "your-dockerhub-username/r-executor", ".R"
 ```
 ```bash
-# Run migrations
-python manage.py migrate
-
 # Start Django server
 python manage.py runserver  # Runs at http://127.0.0.1:8000
-```
-
-## 📦 API Reference
-
-### `POST /api/execute/`
-
-**Request Body:**
-```json
-{
-  "code": "your Python or R code",
-  "language": "python" | "r"
-}
-```
-
-**Response:**
-```json
-{
-  "stdout": "Console output",
-  "stderr": "Errors if any",
-  "images": ["base64-string", "..."],
-  "html_url": "http://127.0.0.1:8000/media/plot.html"
-}
 ```
 
 ---
