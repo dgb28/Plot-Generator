@@ -118,6 +118,7 @@ python manage.py runserver  # Runs at http://127.0.0.1:8000
 | Name           | Email              |
 |----------------|--------------------|
 | Dhruv Bhanderi | dbhander@iu.edu    |
+|                | dgbhanderi20@gmail.com |
 
 ---
 
