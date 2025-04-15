@@ -2,12 +2,12 @@
 🎨 Write Python or R code and generate beautiful visualizations in real-time. Built with React, Django, and Docker.
 
 ## 🌟 Overview  
-**CodePlotter** is a full-stack application that lets users write Python or R code, execute it securely in Docker containers, and visualize the output instantly — including console output, images, and interactive Plotly HTML charts.
+**Plot Generator** is a full-stack application that lets users write Python or R code, execute it securely in Docker containers, and visualize the output instantly — including console output, images, and interactive Plotly HTML charts.
 
 ## 🧠 Key Features  
 - 📝 Interactive code editor with Ace Editor  
 - 🐳 Secure backend code execution using custom Docker containers  
-- 📦 Python & R support with `matplotlib`, `plotly`, `seaborn`, and more  
+- 📦 Python & R support with `matplotlib`, `numpy`, `pandas`, `seaborn`, `scikit-learn`, `plotly`, `lattice`, `rgl`, `fs`, `htmlwidgets`  
 - 🖼️ Outputs include standard output, error logs, base64-encoded images, and Plotly HTML  
 - 🌐 Built with React (Vite) frontend + Django REST backend
 
@@ -46,8 +46,8 @@ CodePlotter/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/codeplotter.git
-cd codeplotter
+https://github.com/dgb28/Plot-Generator.git
+cd Plot-Generator
 ```
 
 ---
@@ -63,30 +63,7 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# Start Django server
-python manage.py runserver  # Runs at http://127.0.0.1:8000
 ```
-
----
-
-### 3️⃣ Set Up the Frontend (React)
-
-```bash
-cd ../frontend
-
-# Install dependencies
-npm install
-
-# Start the frontend
-npm run dev  # Runs at http://localhost:5173
-```
-
----
-
 ## 🐳 Build and Push Docker Executor Images
 
 The backend uses two Docker images to securely execute code. You **must build and push** them to your Docker Hub account before running the app.
@@ -121,8 +98,13 @@ def get_docker_image_and_ext(language):
     elif language == "r":
         return "your-dockerhub-username/r-executor", ".R"
 ```
+```bash
+# Run migrations
+python manage.py migrate
 
----
+# Start Django server
+python manage.py runserver  # Runs at http://127.0.0.1:8000
+```
 
 ## 📦 API Reference
 
@@ -145,15 +127,6 @@ def get_docker_image_and_ext(language):
   "html_url": "http://127.0.0.1:8000/media/plot.html"
 }
 ```
-
----
-
-## 🖥️ Frontend Preview
-
-- Code editor with language toggle  
-- Submit and generate output  
-- View stderr, stdout, PNG plots, or interactive Plotly iframe  
-- Responsive UI with dark mode
 
 ---
 
